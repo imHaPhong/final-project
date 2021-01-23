@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    --header1: calc(1rem + 1vw);
+    --header2: calc(3.5rem + 1vw);
+    --header3: calc(3rem + 1vw);
+    --header4: calc(2.4rem + 1vw);
+    --text: calc(1.5rem + 1vw);
+    --big: calc(6rem + 1vw);
+    --special-color: #906272;
+    --background-color: #414141;
+    --gray-text: #525252;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    body{
+        overflow-x: hidden;
+    }
+}
+  
+  h1 {
+    font-size: var(--header1);
+  }
+
+  button,
+  label,
+  a,
+  p {
+    font-size: var(--text);
+  }
+  h2 {
+    font-size: var(--header2);
+  }
+  h3 {
+    font-size: var(--header3);
+  }
+  h4,
+  h5 {
+    font-size: var(--header4);
+  }
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+@import 'tag.scss';
+@import 'override.scss';
+@import 'style.scss';
+
+.modal-background{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.349);
+}
+
+.padding{
+    padding: 0 30px;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.h-100{
+    width: 100%;
+}
+
+.p-1{
+    padding: 10px;
+}
+
+.mt-2{
+    margin-top: 20px;
+}
+
+.tag{
+    background-color: violet;
+    padding: 5px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin: 0 3px;
+    position: relative;
+    &::before{
+        content: "";
+        width: 0%;
+        height: 3px;
+        background: red;
+        position: absolute;
+        bottom: 0;
+        left: 35%;
+        transition: all 0.5s;
+    }
+    &:hover::before {
+        width: 30%;
+    }
+
+}
+.s-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    .card-img{
+        position: relative;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+       img{
+        max-width: 100%;
+        object-fit: contain;
+       }
+       .card-description{
+           font-size: 1.6rem;
+           width: 100%;
+           height: 100%;
+           color: white;
+           background: rgba(0, 0, 0, 0.541);
+           position: absolute;
+           top: 0;
+           left: 0px;
+           padding: 20px 20px;
+           i{
+               display: block;
+               font-size: 3rem;
+               margin-bottom: 20px;
+               &:hover{
+                   color: violet;
+               }
+           }
+       }
+    }
+    .cart-bottom{
+        display: flex;
+        justify-content: space-between;
+        i{
+            margin: 0 8px;
+        }
+    }
+}
+
+header{
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .input-search{
+            flex: 1;
+            margin: 0 20px;
+            display: flex;
+            justify-content: center;
+            .search-content{
+                width: 80%;
+                border: 1px solid red;
+                border-radius: 50px;
+                display: flex;
+                padding: 5px 5px;
+                align-items: center;
+                height: 40px;
+                input{
+                    border: none;
+                    flex: 1;
+                    padding: 0 10px;
+                    border-left: 1px solid red;
+                    outline: none;
+                }                
+                .drop-box{
+                    padding: 0 10px;
+                    cursor: pointer;
+                    position: relative;
+                    span{
+                        margin-right: 5px;
+                    }
+                    i{
+                        font-size: 1rem;
+                    }
+                }
+                .search-icon{
+                    padding: 0 10px;
+                }
+                .drop-menu{
+                    z-index: 100;
+                    background-color: white;
+                    width: 200px;
+                    box-shadow: 0 10px 10px rgb(190, 182, 182);
+                    position: absolute;
+                    top: 150%;
+                    .drop-item{
+                        .search-group{
+                            padding: 5px 5px;
+                            display: flex;
+                            align-items: center;
+                            border: 1px solid black;
+                            border-bottom: none;
+                            overflow: hidden;
+                            i{
+                                font-size: 1.4rem;
+                                padding-left: 5px;
+                            }
+                            input{
+                                border-left: none;
+                                outline: none;
+                            }
+                        }
+                        .cities{
+                            list-style: none;
+                            .city{
+                                display: block;
+                                padding: 10px 10px;
+                                border-bottom: 1px solid rgb(128, 122, 122);
+                                &:first-child{
+                                    border-top: 1px solid black;
+                                }
+                                &:last-child{
+                                    border: none;
+                                }
+                            }
+                           
+                        }
+                    }
+                }
+            }
+        }
+        .nav-left{
+            min-width: 25%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .upload{
+                background-color: violet;
+                padding: 5px 10px 5px 0px;
+                border-radius: 50px;
+                i{
+                    color: white;
+                    background-color: rgb(189, 36, 189);
+                    padding: 5px 5px;
+                    border-radius: 50px;
+                    margin: 0 5px;
+                }
+                span{
+                    margin-right: 5px;
+
+                }
+            }
+        }
+    }
+}
+

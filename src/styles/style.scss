@@ -1,0 +1,203 @@
+.category-modal {
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px 5px;
+}
+
+.category-slide {
+    position: relative;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 200px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.s-min-height{
+    min-height: 600px;
+}
+
+.slide-list {
+    position: relative;
+
+    .slick-slide {
+        padding: 0 5px;
+    }
+}
+
+.boder {
+    border: 1px solid red;
+}
+
+.slide-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background-color: violet;
+    color: white;
+    text-align: center;
+    z-index: 2;
+
+    i {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.btn-prev {
+    position: absolute;
+    top: 45%;
+    left: 0;
+}
+
+.btn-next {
+    position: absolute;
+    top: 45%;
+    right: 0;
+}
+
+.nav-cate {
+    padding: 20px;
+
+    span {
+        display: inline-block;
+        padding: 5px 20px 5px 0px;
+        position: relative;
+        font-size: 1.6rem;
+        &:hover{
+            color: violet;
+        }
+    }
+
+    .active {
+        font-weight: bold;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 0%;
+            height: 5%;
+            bottom: 0;
+            background-color: red;
+            animation: showBorder 0.3s linear forwards;
+        }
+    }
+}
+
+.c-tag {
+    margin: 10px;
+    border-radius: 30px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    font-size: 1rem;
+    background-color: rebeccapurple;
+}
+
+.boardcard-container {
+    border-radius: 20px;
+    box-shadow: 00px 20px 50px rgba(0, 0, 0, 0.082);
+    padding: 0 10px 5px 10px;
+    background-color: white;
+    &:nth-child(2){
+        margin-top: 20px;
+    }
+    .boarcard-item {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+.board-item{
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .img-wrap{
+        width: 100%;
+        flex: 1;
+        min-width: 35%;
+        img{        
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .restaurant-item{
+        max-width: 65%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        .board-rate{
+            display: flex;
+            align-items: center;
+            i{
+                color: violet;
+                font-size: 2rem;
+                margin-right: 15px;
+            }
+        }
+    }
+  
+}
+
+.user-item{
+    display: flex;
+    margin-bottom: 20px;
+    .user-avatar{
+        max-width: 15%;
+        margin-right: 20px;
+        img{
+            border-radius: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }   
+}
+
+.bottom-nav{
+    position: fixed;   
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    max-height: 50px;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    i{
+        font-size: 23px;
+    }
+}
+
+.m-add-icon{
+    padding: 5px;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 100%;
+}
+
+@keyframes showBorder {
+    from {
+        width: 0%;
+        font-size: 1.6rem;
+    }
+
+    to {
+        width: 60%;
+        font-size: 2rem;
+
+    }
+}
